@@ -36,42 +36,4 @@
  
    ```
    
-<th><span>
-				GET
-			</span></th><th><span>
-				POST
-			</span></th></tr></thead><tbody><tr><td data-label=""><span>
-				Visibility
-			</span></td><td data-label="GET"><span>
-				Visible for the user in the address line
-			</span></td><td data-label="POST"><span>
-				Invisible to the user
-			</span></td></tr><tr><td data-label=""><span>
-				Bookmarks and browsing history
-			</span></td><td data-label="GET"><span>
-				URL parameters are stored together with the URL
-			</span></td><td data-label="POST"><span>
-				URL is saved without URL parameters
-			</span></td></tr><tr><td data-label=""><span>
-				Cache and server log file
-			</span></td><td data-label="GET"><span>
-				The URL parameters are stored unencrypted
-			</span></td><td data-label="POST"><span>
-				The URL parameters are not saved automatically
-			</span></td></tr><tr><td data-label=""><span>
-				Behavior on browser refresh / “Back” button
-			</span></td><td data-label="GET"><span>
-				The URL parameters are not sent again
-			</span></td><td data-label="POST"><span>
-				The browser warns that the form data must be resent
-			</span></td></tr><tr><td data-label=""><span>
-				Data type
-			</span></td><td data-label="GET"><span>
-				Only ASCII characters
-			</span></td><td data-label="POST"><span>
-				Binary data in addition to ASCII characters
-			</span></td></tr><tr><td data-label=""><span>
-				Data length
-			</span></td><td data-label="GET"><span>
-				Restricted to maximum length of the URL (2,048 characters)
-			</span></td>
+
