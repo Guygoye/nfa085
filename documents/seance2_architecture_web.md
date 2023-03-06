@@ -40,6 +40,7 @@
    
    Le tableau ci-après compare les deux méthodes GET et POST:
    
-   > GET > POST
+   > GET 
+   > POST
    ---
    
