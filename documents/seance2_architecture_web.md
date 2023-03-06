@@ -22,7 +22,7 @@ gotostep2=date
 
 ```
    
-    La methode GET de son côté permet d'envoyer les données nécéssaire à l'affichage correcte dans le navigateur comme:
+   La methode GET de son côté permet d'envoyer les données nécéssaire à l'affichage correcte dans le navigateur comme:
 
    - le type de navigateur, 
    - sa version
