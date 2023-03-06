@@ -36,7 +36,16 @@
  
    ```
    
-   <th><span>
+<table class="table info-table"><thead><tr><th>
+			
+	
+
+		&nbsp;
+	
+
+
+		
+				</th><th><span>
 				GET
 			</span></th><th><span>
 				POST
@@ -76,4 +85,4 @@
 				Restricted to maximum length of the URL (2,048 characters)
 			</span></td><td data-label="POST"><span>
 				Unlimited
-			</span>
+			</span></td></tr></tbody></table>
