@@ -47,7 +47,7 @@
    | Cache et fichier log du serveur                                           | Les paramètres de l’URL sont stockés sans chiffrement         | Les paramètres de l’URL ne sont pas enregistrés automatiquement.            |
    | Comportement lors de l’actualisation du navigateur / Bouton « précédent » | Les paramètres de l’URL ne sont pas envoyés à nouveau.        | Le navigateur avertit que les données du formulaire doivent être renvoyées. |
    | Type de données                                                           | Caractères ASCII uniquement.                                  | Caractères ASCII mais également données binaires.                              |
-   | Longueur des données                                                      | Limitée - longueur maximale de l’URL à 2 048 caractères.      |              |> GET 
+   | Longueur des données                                                      | Limitée - longueur maximale de l’URL à 2 048 caractères.      | Illimité              
   
-   ---
+   
    
