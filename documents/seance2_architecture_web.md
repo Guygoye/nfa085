@@ -31,9 +31,11 @@
 
     Dans la requête faite ci-après nous voyions que ce qui est demandé à l'affichage est une image.
 
-   ```
-   curl 'https://framasoft.org/nav/img/icons/favicon/sites/date.png' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0' -H 'Accept: image/avif,image/webp,*/*' -H 'Accept-Language: fr-FR,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Connection: keep-alive' -H 'Referer: https://framadate.org/' -H 'Sec-Fetch-Dest: image' -H 'Sec-Fetch-Mode: no-cors' -H 'Sec-Fetch-Site: cross-site'
+    ```
+    curl 'https://framasoft.org/nav/img/icons/favicon/sites/date.png' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0' -H 'Accept: image/avif,image/webp,*/*' -H 'Accept-Language: fr-FR,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Connection: keep-alive' -H 'Referer: https://framadate.org/' -H 'Sec-Fetch-Dest: image' -H 'Sec-Fetch-Mode: no-cors' -H 'Sec-Fetch-Site: cross-site'
  
-   ```
+    ```
    
-
+2. **Comparaison méthodes**
+   
+   Le tableau ci-après compare les deux méthodes GET et POST
