@@ -1,4 +1,4 @@
-**1. Méthodes GET et POST**
+1. **Méthodes GET et POST**
 
    
     La requête GET permet de demander au serveur d'nevoyer des informations à afficher dans le navigateur. Cette requête est affichée en clair dans l'URL par exemple avec un moteur de recherche elle peut être sous la forme `search?`
