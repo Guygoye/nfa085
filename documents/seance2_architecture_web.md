@@ -8,8 +8,8 @@
     Elle envoie la requête suivante:
 
 ```
-name=Guillaume
-mail=guillaume.royer@pgcc.ynh.fr
+name=Toto
+mail=toto@toto.fr
 title=Sondage pour analyse formulaire
 description
 ValueMax
