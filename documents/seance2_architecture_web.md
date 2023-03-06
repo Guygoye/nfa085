@@ -38,4 +38,8 @@
    
 2. **Comparaison méthodes**
    
-   Le tableau ci-après compare les deux méthodes GET et POST
+   Le tableau ci-après compare les deux méthodes GET et POST:
+   
+   > GET > POST
+   ---
+   
