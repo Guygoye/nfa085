@@ -49,5 +49,11 @@
    | Type de données                                                           | Caractères ASCII uniquement.                                  | Caractères ASCII mais également données binaires.                              |
    | Longueur des données                                                      | Limitée - longueur maximale de l’URL à 2 048 caractères.      | Illimité              
   
+   [Source IONOS comparaison entre GET et POST](https://www.ionos.fr/digitalguide/sites-internet/developpement-web/get-vs-post/)
    
+3. **Extensible**
+      
+      C'est un protocole extensible car il peut évoluer au fil du temps et on peut y a jouter plus de nouvelles fonctionnalité, méthodes et moyens d'authentification. C'est pour cela qu'on a pu l'adapter pour gérer des images, de la vidéo, de l'envoie de données tels que les formulaires par exemple.
+
+  
    
