@@ -79,4 +79,9 @@
 
    L'ensemble des code status sont détaillés sur [cette page](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)
    
+7. **Négociation de contenu**
+
+   La négociation de contenu est un mécanisme qui permet de proposer une même ressource sous plusieurs formes différentes. En HTTP les variations permises concernent la langue de la ressource et son type MIME (les ressources multimédias). Le navigateur choisi lui même la langue par exemple ou encore le format de l'image affichée soit en fonction de la langue pour laquelle il est configuré et dans le cas d'une image le format qu'il est capable d'afficher.
+
+
 
