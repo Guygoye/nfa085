@@ -53,7 +53,30 @@
    
 3. **Extensible**
       
-      C'est un protocole extensible car il peut évoluer au fil du temps et on peut y a jouter plus de nouvelles fonctionnalité, méthodes et moyens d'authentification. C'est pour cela qu'on a pu l'adapter pour gérer des images, de la vidéo, de l'envoie de données tels que les formulaires par exemple.
+      C'est un protocole extensible car il peut évoluer au fil du temps et on peut y a jouter plus de nouvelles fonctionnalités, méthodes et moyens d'authentifications. C'est pour cela qu'on a pu l'adapter pour gérer des images, de la vidéo, de l'envoie de données tels que les formulaires par exemple.
+      
+4. **Protocole sans état**
 
+   On dit que le protocole HTTP est sans état car il n'y pas de dispositif pour vérifier si les trames envoyées sont bien arrivées. Elles sont envoyées par paires requêtes-réponses. Cela a pour avantage de simplifier le designe des serveurs et de les alléger. Cela a pour inconvénients d'empiler les couches de proctocoles car un protocoles sans état s'appuier généralement sur un protocole avec état. Cela oblige également des données des informations supplémentaires qui doivent être interprétées par le serveur ce qui peut ralentir la navigation. Avec un protocole sans état, si une requête est perdue, ni le client, ni le serveur le savent et la requête demandée n'est pas executée. Cela peut entraîner un problème de reception de données incomplètes. 
   
+5. **URL**
+
+   Par exemple l'URL: https://www.qwant.com/?client=brz-moz&q=d%C3%A9composition+URL&t=web
    
+   - HTTPS:// correspond au protocole utilisé, ici le HTTPS qui signifie protocole chiffré TLS
+   - www.qwant.com corrsepond au nom de dommaine www signifiant Wolrd Wide Web.
+   - ?client=brz-moz&q=d%C3%A9composition+URL&t=websont des paramètres supplémentaires fournis au serveur web. Ces paramètres sont construits sous la forme d'une liste de paires de clé/valeur dont chaque élément est séparé par une esperluette (&). Le serveur web pourra utiliser ces paramètres pour effectuer des actions supplémentaires avant d'envoyer la ressource. Ici ce sont les paramètres liés à ma recherche sur le moteur de rcherche QWANT.
+
+6. **Codes Status**
+
+   Les codes de statut de réponse HTTP indiquent si une requête HTTP a été exécutée avec succès ou non. Il en existe plusieurs familles:
+   
+   - 100 à 199 sont des codes de réponse informatifs
+   - 200 à 299 sont des codes de réponses de succès
+   - 300 à 399 sont les messages redirection
+   - 400 à 499 sont les messages d'erreur côté client
+   - 500 à 599 sont les messages d'erreur côté serveur
+
+   L'ensemble des code status sont détaillés sur [cette page](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)
+   
+
