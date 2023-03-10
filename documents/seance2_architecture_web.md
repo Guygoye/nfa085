@@ -83,5 +83,32 @@
 
    La négociation de contenu est un mécanisme qui permet de proposer une même ressource sous plusieurs formes différentes. En HTTP les variations permises concernent la langue de la ressource et son type MIME (les ressources multimédias). Le navigateur choisi lui même la langue par exemple ou encore le format de l'image affichée soit en fonction de la langue pour laquelle il est configuré et dans le cas d'une image le format qu'il est capable d'afficher.
 
+9. **CURL**
 
+   Résultat de la requête GET vers l'url http://dev.local:
+   
+   ```
+   HTTP/1.1 304 Not Modified
+   Date: Fri, 10 Mar 2023 14:51:09 GMT
+   Server: Apache/2.4.54 (Unix) OpenSSL/1.1.1s PHP/8.2.0 mod_perl/2.0.12 Perl/v5.34.1
+   Last-Modified: Fri, 10 Mar 2023 12:46:19 GMT
+   ETag: "150-5f68b25d32dab"
+   Accept-Ranges: bytes
+   Keep-Alive: timeout=5, max=100
+   Connection: Keep-Alive
+   ```
+   Résultat de la requête GET vers l'url http://dev.local/notExisting
+   
+   ```
+   HTTP/1.1 404 Not Found
+   Date: Fri, 10 Mar 2023 14:56:57 GMT  
+   Server: Apache/2.4.54 (Unix) OpenSSL/1.1.1s PHP/8.2.0 mod_perl/2.0.12 Perl/v5.34.1
+   Vary: accept-language,accept-charset
+   Accept-Ranges: bytes
+   Keep-Alive: timeout=5, max=100
+   Connection: Keep-Alive
+   Transfer-Encoding: chunked
+   Content-Type: text/html; charset=utf-8
+   Content-Language: en
+   ```
 
