@@ -1,11 +1,11 @@
-1. **Méthodes GET et POST**
+# 1. **Méthodes GET et POST**
 
    
-    La requête GET permet de demander au serveur d'nevoyer des informations à afficher dans le navigateur. Cette requête est affichée en clair dans l'URL par exemple avec un moteur de recherche elle peut être sous la forme `search?`
-    La requête POST permet d'envoyer des informations au serveur web, elle n'est pas visible dans l'URL et son utilisation la plus courante est pour des formulaires.
-    Par exemple sur le site de Framasoft lors de la création d'un Framaste à l'URL: [](https://framadate.org/create_date_poll.php) nous povons observer grâce à la console de débugage de Firefox que la méthode POST est utilisée pour créer le formulaire sur le serveur. 
+   La requête GET permet de demander au serveur d'nevoyer des informations à afficher dans le navigateur. Cette requête est affichée en clair dans l'URL par exemple avec un moteur de recherche elle peut être sous la forme `search?`
+   La requête POST permet d'envoyer des informations au serveur web, elle n'est pas visible dans l'URL et son utilisation la plus courante est pour des formulaires.
+   Par exemple sur le site de Framasoft lors de la création d'un Framaste à l'URL: [](https://framadate.org/create_date_poll.php) nous povons observer grâce à la console de débugage de Firefox que la méthode POST est utilisée pour créer le formulaire sur le serveur. 
     
-    Elle envoie la requête suivante:
+   Elle envoie la requête suivante:
 
    ```
    name=Toto
@@ -21,22 +21,21 @@
    gotostep2=date
    ```
    
-    La methode GET de son côté permet d'envoyer les données nécéssaire à l'affichage correcte dans le navigateur comme:
+   La methode GET de son côté permet d'envoyer les données nécéssaire à l'affichage correcte dans le navigateur comme:
 
-    - le type de navigateur, 
-    - sa version
-    - le système d'exploitation utilisé 
-    - La langue du navigateur
-    - Le type de contenu demandé
+   - le type de navigateur, 
+   - sa version
+   - le système d'exploitation utilisé 
+   - La langue du navigateur
+   - Le type de contenu demandé
 
-    Dans la requête faite ci-après nous voyions que ce qui est demandé à l'affichage est une image.
+   Dans la requête faite ci-après nous voyions que ce qui est demandé à l'affichage est une image.
 
-    ```
-    curl 'https://framasoft.org/nav/img/icons/favicon/sites/date.png' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0' -H 'Accept: image/avif,image/webp,*/*' -H 'Accept-Language: fr-FR,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Connection: keep-alive' -H 'Referer: https://framadate.org/' -H 'Sec-Fetch-Dest: image' -H 'Sec-Fetch-Mode: no-cors' -H 'Sec-Fetch-Site: cross-site'
- 
-    ```
+   ```
+   curl 'https://framasoft.org/nav/img/icons/favicon/sites/date.png' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/110.0' -H 'Accept: image/avif,image/webp,*/*' -H 'Accept-Language: fr-FR,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Connection: keep-alive' -H 'Referer: https://framadate.org/' -H 'Sec-Fetch-Dest: image' -H 'Sec-Fetch-Mode: no-cors' -H 'Sec-Fetch-Site: cross-site'
+   ```
    
-2. **Comparaison méthodes**
+# 2. **Comparaison méthodes**
    
    Le tableau ci-après compare les deux méthodes GET et POST:
    
@@ -51,15 +50,17 @@
   
    [Source IONOS comparaison entre GET et POST](https://www.ionos.fr/digitalguide/sites-internet/developpement-web/get-vs-post/)
    
-3. **Extensible**
+# 3. **Extensible**
       
-      C'est un protocole extensible car il peut évoluer au fil du temps et on peut y a jouter plus de nouvelles fonctionnalités, méthodes et moyens d'authentifications. C'est pour cela qu'on a pu l'adapter pour gérer des images, de la vidéo, de l'envoie de données tels que les formulaires par exemple.
+   C'est un protocole extensible car il peut évoluer au fil du temps et on peut y a jouter plus de nouvelles fonctionnalités, méthodes et moyens d'authentifications. C'est pour cela qu'on a pu l'adapter pour gérer des images, de la vidéo, de l'envoie de données tels que les formulaires par exemple.
+   Le protocole HTTP est une couche de transport agnostic de son contenu, on peut lui ajouter de nouveaux Header qui serait par exemple traités par une couche logiciel supplémentaire au serveur.
       
-4. **Protocole sans état**
+# 4. **Protocole sans état**
 
-   On dit que le protocole HTTP est sans état car il n'y pas de dispositif pour vérifier si les trames envoyées sont bien arrivées. Elles sont envoyées par paires requêtes-réponses. Cela a pour avantage de simplifier le designe des serveurs et de les alléger. Cela a pour inconvénients d'empiler les couches de proctocoles car un protocoles sans état s'appuier généralement sur un protocole avec état. Cela oblige également des données des informations supplémentaires qui doivent être interprétées par le serveur ce qui peut ralentir la navigation. Avec un protocole sans état, si une requête est perdue, ni le client, ni le serveur le savent et la requête demandée n'est pas executée. Cela peut entraîner un problème de reception de données incomplètes. 
+   On dit que le protocole HTTP est sans état car il n'y pas de dispositif pour vérifier si les trames envoyées sont bien arrivées. Elles sont envoyées par paires requêtes-réponses. Cela a pour avantage de simplifier le designe des serveurs et de les alléger. Le serveur ne sait donc pas si une requête POST ou GET par exemple est déjà arrivée avec la même demande de la part d'un client. Le serveur s'occupe de répondre aux requêtes peu importe l'ordre d'arrivée des requêtes et peu importe si elles ont déjà été demandées précédemment.
+   Cela a pour inconvénients d'empiler les couches de proctocoles car un protocoles sans état s'appuier généralement sur un protocole avec état. Cela oblige également des données des informations supplémentaires qui doivent être interprétées par le serveur ce qui peut ralentir la navigation. Avec un protocole sans état, si une requête est perdue, ni le client, ni le serveur le savent et la requête demandée n'est pas executée. Cela peut entraîner un problème de reception de données incomplètes. 
   
-5. **URL**
+# 5. **URL**
 
    Par exemple l'URL: https://www.qwant.com/?client=brz-moz&q=d%C3%A9composition+URL&t=web
    
@@ -67,7 +68,7 @@
    - www.qwant.com corrsepond au nom de dommaine www signifiant Wolrd Wide Web.
    - ?client=brz-moz&q=d%C3%A9composition+URL&t=websont des paramètres supplémentaires fournis au serveur web. Ces paramètres sont construits sous la forme d'une liste de paires de clé/valeur dont chaque élément est séparé par une esperluette (&). Le serveur web pourra utiliser ces paramètres pour effectuer des actions supplémentaires avant d'envoyer la ressource. Ici ce sont les paramètres liés à ma recherche sur le moteur de rcherche QWANT.
 
-6. **Codes Status**
+# 6. **Codes Status**
 
    Les codes de statut de réponse HTTP indiquent si une requête HTTP a été exécutée avec succès ou non. Il en existe plusieurs familles:
    
@@ -79,11 +80,11 @@
 
    L'ensemble des code status sont détaillés sur [cette page](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)
    
-7. **Négociation de contenu**
+# 7. **Négociation de contenu**
 
    La négociation de contenu est un mécanisme qui permet de proposer une même ressource sous plusieurs formes différentes. En HTTP les variations permises concernent la langue de la ressource et son type MIME (les ressources multimédias). Le navigateur choisi lui même la langue par exemple ou encore le format de l'image affichée soit en fonction de la langue pour laquelle il est configuré et dans le cas d'une image le format qu'il est capable d'afficher.
 
-9. **CURL**
+# 9. **CURL**
 
    Résultat de la requête GET vers l'url http://dev.local:
    
@@ -111,7 +112,7 @@
    Content-Type: text/html; charset=utf-8
    Content-Language: en
    ```
-10. **Header**
+# 10. **Header**
 
   Les en-têtes HTTP permettent au client et au serveur de transmettre des informations supplémentaires avec la requête ou la réponse. Un en-tête de requête est constitué de son nom (insensible à la casse) suivi d'un deux-points :, puis de sa valeur (sans saut de ligne). L'espace blanc avant la valeur est ignoré.
   Source [Mozilla developper](https://developer.mozilla.org/fr/docs/Web/HTTP/Headers)
