@@ -60,3 +60,13 @@
    La librairie offre des fonctionnalités souvent décorrélées les unes des autres. C'est une collection de routines (ou de méthodes), pouvant être appelées par le code d’un développeur pour exécuter des actions spécifiques. Un framework peut contenir des bibliothèques. 
    Jquery, Bootstrap et Tailwin sont des bibliothèques font-end. 
    
+## 5. Architecture
+
+   Une architecture 3 tiers est une architecture en web qui s'appuie sur 3 couches logicielles:
+   - présentation des données, correspondant à l'affichage, la restitution sur le poste de travail, le dialogue avec l'utilisateur
+   - traitement des données, correspondant à la mise en œuvre de l'ensemble des règles de gestion et de la logique applicative 
+   - accés aux données, correspondant aux données qui sont destinées à être conservées sur la durée, voire de manière définitive
+
+   Les 3 couches communiquent entre elles, au travers d'un model d'échanges, chacune d'entre elles proposent un model de service et ne peut accéder qu'àl couche  qui lui est immédiatement inférieure. Donc chaque couche met à disposition ses services à la couche supérieur.
+
+   ![exemple de schéma d'architecture à 3 couches, source Wikipédia](https://user-images.githubusercontent.com/58706637/225900714-d156aa57-9340-4759-9cb0-38cdf1256fca.png)
