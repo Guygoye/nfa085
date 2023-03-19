@@ -86,7 +86,7 @@
    ```
    ```
    
-   **API urllookup***
+   **API urllookup**
    
    - Le Parisien
    
@@ -94,6 +94,7 @@
    curl -X GET https://api.api-ninjas.com/v1/urllookup?url=www.leparisien.fr  -H "X-Api-Key: FPshQKwI3BFpU45yW641IQ==8FwDddgiAo3fGZsR"  {"is_valid": true, "country": "United States", "country_code": "US", "region_code": "WA", "region": "Washington", "city": "Seattle", "zip": "98160", "lat": 47.6034, "lon": -122.3414, "timezone": "America/Los_Angeles", "isp": "Akamai International, BV", "url": "www.leparisien.fr"}
    ```
    L'ISP est "Akamai International, BV"
+   
    La localisation est aux Etats-Unis dans l'Etat de Washington à Seattle
    
    - Le Bon Coin
@@ -103,6 +104,7 @@
 {"is_valid": true, "country": "United States", "country_code": "US", "region_code": "OR", "region": "Oregon", "city": "Portland", "zip": "97207", "lat": 45.5051, "lon": -122.675, "timezone": "America/Los_Angeles", "isp": "Amazon Technologies Inc.", "url": "www.leboncoin.fr"}  
    ```
    L'ISP est "Amazon Technologies Inc."
+   
    La localisation est au USA dans l'Oregon dans la ville de Portland
    
    - Cdiscount
@@ -112,6 +114,7 @@
 {"is_valid": true, "country": "United States", "country_code": "US", "region_code": "VA", "region": "Virginia", "city": "Sterling", "zip": "20166", "lat": 39.0297, "lon": -77.4088, "timezone": "America/New_York", "isp": "NeuStar, Inc.", "url": "www.cdiscount.fr"}
    ```
    L'ISP est "NeuStar, Inc."
+   
    La localisation est au USA en Virginie dans la ville de Sterling
    
    
