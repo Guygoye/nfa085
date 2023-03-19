@@ -84,7 +84,9 @@
    **API textsimilary**
    
    ```
+   curl -X POST https://api.api-ninjas.com/v1/textsimilarity -H "X-api-Key: FPshQKwI3BFpU45yW641IQ==8FwDddgiAo3fGZsR" -H "Content-Type: application/json" -d "{\"text_1\": \"Nous le savons, et pas seulement de Marseille\", \"text_2\": \"Le savon de Marseille\"}"
    ```
+   Le score est de 0.7752714157104492
    
    **API urllookup**
    
@@ -117,6 +119,148 @@
    
    La localisation est au USA en Virginie dans la ville de Sterling
    
+   # 7.  Interrogation d’API Web – opérations multiples
    
-   
+   - Token :  
+   ```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZyIsImlhdCI6MTY3OTIyNDU4NiwiZXhwIjoxNjc5MjI4MTg2fQ.gBE469GbBzeZwsbBQ77jp48hjG_JTWlQkET-IeWLmBM
+   ```
 
+   - Lister les produits du caddie de l'utilisateur ID 15
+   
+   ```
+   curl -X GET https://dummyjson.com/carts/user/15 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZyIsImlhdCI6MTY3OTIyNDU4NiwiZXhwIjoxNjc5MjI4MTg2fQ.gBE469GbBzeZwsbBQ77jp48hjG_JTWlQkET-IeWLmBM" 
+   
+   {
+    "carts": [{
+        "id": 16,
+        "products": [{
+            "id": 3,
+            "title": "Samsung Universe 9",
+            "price": 1249,
+            "quantity": 3,
+            "total": 3747,
+            "discountPercentage": 15.46,
+            "discountedPrice": 3168
+        }, {
+            "id": 50,
+            "title": "Women Shoes",
+            "price": 36,
+            "quantity": 3,
+            "total": 108,
+            "discountPercentage": 16.87,
+            "discountedPrice": 90
+        }, {
+            "id": 67,
+            "title": "Fashion Magnetic Wrist Watch",
+            "price": 60,
+            "quantity": 2,
+            "total": 120,
+            "discountPercentage": 16.69,
+            "discountedPrice": 100
+        }, {
+            "id": 86,
+            "title": "Bluetooth Aux",
+            "price": 25,
+            "quantity": 1,
+            "total": 25,
+            "discountPercentage": 10.56,
+            "discountedPrice": 22
+        }, {
+            "id": 12,
+            "title": "Brown Perfume",
+            "price": 40,
+            "quantity": 1,
+            "total": 40,
+            "discountPercentage": 15.66,
+            "discountedPrice": 34
+        }],
+        "total": 4040,
+        "discountedTotal": 3414,
+        "userId": 15,
+        "totalProducts": 5,
+        "totalQuantity": 10
+    }],
+    "total": 1,
+    "skip": 0,
+    "limit": 1
+}
+
+   ```
+   - Afficher un produit
+
+   ```
+   https://dummyjson.com/products/50
+   
+   {
+    "id": 50,
+    "title": "Women Shoes",
+    "description": "2020 New Arrivals Genuine Leather Fashion Trend Platform Summer Women Shoes",
+    "price": 36,
+    "discountPercentage": 16.87,
+    "rating": 4.33,
+    "stock": 46,
+    "brand": "Arrivals Genuine",
+    "category": "womens-shoes",
+    "thumbnail": "https://i.dummyjson.com/data/products/50/thumbnail.jpg",
+    "images": ["https://i.dummyjson.com/data/products/50/1.jpeg", "https://i.dummyjson.com/data/products/50/2.jpg", "https://i.dummyjson.com/data/products/50/3.jpg"]
+}
+
+   ```
+   
+   - Ajouter un produit
+
+  ```
+  curl -X POST https://dummyjson.com/products/add -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZyIsImlhdCI6MTY3OTIyNDU4NiwiZXhwIjoxNjc5MjI4MTg2fQ.gBE469GbBzeZwsbBQ77jp48hjG_JTWlQkET-IeWLmBM" -H "Content-Type: application/json" --data-binary @- <<DATA
+{    "title": "produit ajouté NFA085"
+  
+  }
+DATA
+
+{
+    "id": 101,
+    "title": "produit ajouté NFA085"
+}
+   ```
+   - Supprimer un produit
+
+   ```
+   curl -X DELETE https://dummyjson.com/products/2 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZyIsImlhdCI6MTY3OTIyNDU4NiwiZXhwIjoxNjc5MjI4MTg2fQ.gBE469GbBzeZwsbBQ77jp48hjG_JTWlQkET-IeWLmBM" 
+
+   
+   {
+    "id": 2,
+    "title": "iPhone X",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "price": 899,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Apple",
+    "category": "smartphones",
+    "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+    "images": ["https://i.dummyjson.com/data/products/2/1.jpg", "https://i.dummyjson.com/data/products/2/2.jpg", "https://i.dummyjson.com/data/products/2/3.jpg", "https://i.dummyjson.com/data/products/2/thumbnail.jpg"],
+    "isDeleted": true,
+    "deletedOn": "2023-03-19T19:38:19.909Z"
+}
+   ```
+   - Modifier un produit
+
+   ```
+   curl -X PUT https://dummyjson.com/products/2 -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvYXV0cXVpYXV0LnBuZyIsImlhdCI6MTY3OTIyNDU4NiwiZXhwIjoxNjc5MjI4MTg2fQ.gBE469GbBzeZwsbBQ77jp48hjG_JTWlQkET-IeWLmBM" -H "Content-Type: application/json" -d "{ \"title\": \"Produit NFA085\"}"
+   
+   {
+    "id": 2,
+    "title": "Produit NFA085",
+    "price": 899,
+    "stock": 34,
+    "rating": 4.44,
+    "images": ["https://i.dummyjson.com/data/products/2/1.jpg", "https://i.dummyjson.com/data/products/2/2.jpg", "https://i.dummyjson.com/data/products/2/3.jpg", "https://i.dummyjson.com/data/products/2/thumbnail.jpg"],
+    "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+    "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+    "brand": "Apple",
+    "category": "smartphones"
+}
+
+   ```
+   
